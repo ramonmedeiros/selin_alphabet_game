@@ -12,12 +12,10 @@ document.onkeypress = function(evt) {
 		updateLetter();
 };
 
-$(document).ready(function() {
-	document.ontouchmove = function(e){
-		 e.preventDefault();
-		 }
-});
 
+document.ontouchmove = function(e){
+	e.preventDefault();
+}
 
 function updateLetter() {
 	if (letter == alphabet.length -1)

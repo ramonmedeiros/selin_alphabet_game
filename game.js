@@ -12,6 +12,13 @@ document.onkeypress = function(evt) {
 		updateLetter();
 };
 
+$(document).ready(function() {
+	document.ontouchmove = function(e){
+		 e.preventDefault();
+		 }
+});
+
+
 function updateLetter() {
 	if (letter == alphabet.length -1)
 		letter = 0;
@@ -22,6 +29,12 @@ function updateLetter() {
 
 function openKeyboard(){
     var inputElement = document.getElementById('hiddenInput');
+
+	inputElement.onfocus = function () {
+		window.scrollTo(0, 0);
+		document.body.scrollTop = 0;
+	}
+
     inputElement.style.visibility = 'visible'; // unhide the input
     inputElement.focus(); // focus on it so keyboard pops
     inputElement.style.visibility = 'hidden'; // hide it again
